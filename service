@@ -1,0 +1,33 @@
+#!/usr/bin/python
+import BNO055
+from hosted import GPIO, node
+
+class GPIOWrap(object):
+    def __init__(self):
+        self._gpio = GPIO()
+
+    def setup(self, pin, direction):
+        self._gpio.setup_pin(pin, direction, invert=False)
+
+    def set_high(self, pin):
+        self._gpio.set_pin_value(pin, high=True)
+
+    def set_low(self, pin):
+        self._gpio.set_pin_value(pin, high=False)
+
+bno = BNO055.BNO055(serial_port='/dev/ttyS0', rst=18, gpio=GPIOWrap())
+
+if not bno.begin():
+    raise RuntimeError('Failed to initialize BNO055! Is the sensor connected?')
+
+last_value = 0
+while True:
+    heading, roll, pitch = bno.read_euler()
+
+    # you might need to choose another value depending on how
+    # your sensor is mounted.
+    value = -pitch
+
+    if value != last_value:
+        last_value = value
+        node.send('/rotate:%f' % value)

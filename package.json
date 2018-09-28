@@ -1,0 +1,6 @@
+{
+    "name": "Rotating Video Demo",
+    "author": "Florian Wesch <fw@info-beamer.com>",
+    "desc": "Demonstrate BNO055 sensor integration",
+    "repository": "https://github.com/info-beamer/package-bno055-demo"
+}

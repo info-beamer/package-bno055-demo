@@ -1,0 +1,16 @@
+{
+    "name": "BNO055 demo",
+    "permissions": {
+        "gpio": "yes",
+        "serial": "yes"
+    },
+    "options": [{
+        "title": "Video",
+        "ui_width": 6,
+        "name": "video",
+        "type": "resource",
+        "valid": ["video"],
+        "default": ""
+    }]
+}
+
