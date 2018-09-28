@@ -1,5 +1,8 @@
 # Rotation Sensing Content Demo
 
+[![Import](https://cdn.infobeamer.com/s/img/import.png)](https://info-beamer.com/use?url=https://github.com/info-beamer/package-bno055-demo.git)
+
+
 This package shows how the
 [BNO055 sensor](https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/overview)
 from Adafruit can be used to build content that reacts to rotation changes. Right now it's a
