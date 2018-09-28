@@ -10,7 +10,7 @@
         "name": "video",
         "type": "resource",
         "valid": ["video"],
-        "default": ""
+        "default": "example.mp4"
     }]
 }
 
